@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
+
+    <meta name="theme-color" content="#05000d">
+
+    <title>For You ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="stars"></div>
+
+    <!-- =========================
+         WELCOME SCREEN
+    ========================== -->
+
+    <section id="welcome" class="screen active">
+
+        <div class="welcome-content">
+
+            <div class="gift">🎁</div>
+
+            <p class="small-text">
+                I made something special for you...
+            </p>
+
+            <h1>
+                Open Your Surprise
+            </h1>
+
+            <div class="hold-area">
+
+                <div class="hold-ring" id="holdRing">
+
+                    <div class="hold-button" id="holdButton">
+                        <span>HOLD</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="hint">
+                Press and hold ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COUNTDOWN
+    ========================== -->
+
+    <section id="countdown" class="screen">
+
+        <div id="countNumber" class="countdown-number">
+            3
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NAME REVEAL
+    ========================== -->
+
+    <section id="nameReveal" class="screen">
+
+        <p class="small-text">
+            Today is all about...
+        </p>
+
+        <h1 class="friend-name">
+           FASIUR RAHMAN ANNA SENPAI
+        </h1>
+
+        <div class="heart">
+            ❤️
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+
+    <section id="memories" class="screen">
+
+        <p class="small-text">
+            Some memories are meant to stay forever...
+        </p>
+
+        <h2>
+            Our Memories 📸
+        </h2>
+
+        <div class="photo-wrapper">
+
+            <div class="photo-card" id="photoCard">
+
+                <img
+                    id="memoryImage"
+                    src="photos/photo1.jpeg"
+                    alt="Memory">
+
+                <div class="photo-overlay">
+                    <span id="photoNumber">
+                        01 / 04
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p id="memoryText">
+            One of those moments I'll always remember ❤️
+        </p>
+
+        <div class="swipe-hint">
+            ← Swipe →
+        </div>
+
+        <div class="dots" id="dots"></div>
+
+    </section>
+
+
+    <!-- =========================
+         TYPING SCREEN
+    ========================== -->
+
+    <section id="typing" class="screen">
+
+        <div class="typing-container">
+
+            <div class="typing-symbol">
+                ✨
+            </div>
+
+            <p id="typingText"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL WISH
+    ========================== -->
+
+    <section id="finalWish" class="screen">
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <h1>
+            HAPPY BIRTHDAY
+        </h1>
+
+        <h2 class="final-name">
+            FASIUR RAHMAN ANNA😊
+        </h2>
+
+        <p class="final-message">
+    Life-la namma meet panra people-la,
+    sila people mattum dhaan
+    namma journey-la oru special place-a
+    eppovume vachiruppanga. ❤️
+
+    <br><br>
+
+    Ungaloda kooda pesina moments,
+    jokes, random conversations,
+    sanda, laughter...
+    indha memories ellame
+    always special-aa irukkum. ✨
+
+    <br><br>
+
+    Indha new year of your life-la
+    innum neraya happiness,
+    periya achievements,
+    and beautiful memories
+    ungalukku kidaikkum. 🤝
+    Na unagalukaaga pray panra😇
+
+    <br><br>
+
+    Keep smiling.
+    Keep growing.
+    Keep inspiring. ❤️
+
+    <br><br>
+
+    Happy Birthday F Anna! 🎂✨
+
+    <br>
+
+    Wishing you an amazing year ahead! 😊
+</p>
+
+        </p>
+
+        <button id="wishButton">
+            MAKE A WISH ✨
+        </button>
+
+    </section>
+
+
+    <!-- FIREWORKS -->
+
+    <canvas id="fireworks"></canvas>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

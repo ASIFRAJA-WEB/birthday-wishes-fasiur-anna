@@ -1,0 +1,715 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #42106b,
+            #160022 35%,
+            #05000d 80%
+        );
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1;
+
+    opacity: .3;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+
+    animation:
+        starsMove 18s linear infinite;
+}
+
+@keyframes starsMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-100px);
+    }
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.08);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-text {
+
+    color: #d9c5e7;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+
+    font-size:
+        clamp(38px, 11vw, 75px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff55ce,
+            #ffffff,
+            #ffd166
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-content {
+
+    width: 100%;
+
+    max-width: 380px;
+}
+
+.gift {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+    animation:
+        giftFloat 2s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+}
+
+
+/* =========================
+   HOLD BUTTON
+========================= */
+
+.hold-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.hold-ring {
+
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        conic-gradient(
+            #ff4ecd 0deg,
+            transparent 0deg
+        );
+
+    padding: 6px;
+
+    transition: .1s;
+}
+
+.hold-button {
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3cac,
+            #784ba0
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(255,60,172,.45);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    user-select: none;
+
+    touch-action: none;
+}
+
+.hint {
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-number {
+
+    font-size: 125px;
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px #ff4ecd,
+        0 0 60px #ff4ecd;
+
+    animation:
+        countPop 1s ease;
+}
+
+@keyframes countPop {
+
+    0% {
+        transform:
+            scale(.2);
+
+        opacity: 0;
+    }
+
+    70% {
+        transform:
+            scale(1.2);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.friend-name {
+
+    font-size:
+        clamp(55px, 17vw, 100px);
+
+    margin-bottom: 10px;
+
+    animation:
+        nameReveal 2s ease;
+}
+
+.heart {
+
+    font-size: 45px;
+
+    animation:
+        heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.25);
+    }
+}
+
+@keyframes nameReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.3);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+#memories h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 18px;
+}
+
+.photo-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.photo-card {
+
+    position: relative;
+
+    width: min(82vw, 350px);
+
+    height: min(105vw, 430px);
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    background:
+        #18051f;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.7);
+
+    touch-action: pan-y;
+
+    transition:
+        transform .3s ease;
+}
+
+.photo-card img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+.photo-overlay {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 20px;
+
+    text-align: right;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.75)
+        );
+}
+
+.photo-overlay span {
+
+    font-size: 12px;
+
+    color: white;
+}
+
+#memoryText {
+
+    margin-top: 14px;
+
+    font-size: 14px;
+
+    color: #ddd;
+
+    max-width: 330px;
+
+    line-height: 1.5;
+}
+
+.swipe-hint {
+
+    margin-top: 12px;
+
+    color: #9d8ca8;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.dots {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+.dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #5d4a68;
+
+    transition: .3s;
+}
+
+.dot.active {
+
+    width: 20px;
+
+    border-radius: 10px;
+
+    background: #ff62d3;
+}
+
+
+/* =========================
+   TYPING
+========================= */
+
+.typing-container {
+
+    width: 90%;
+
+    max-width: 390px;
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.typing-symbol {
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+
+    animation:
+        sparkle 1.5s infinite;
+}
+
+#typingText {
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: white;
+
+    min-height: 100px;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: .4;
+        transform: scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.cake {
+
+    font-size: 78px;
+
+    margin-bottom: 15px;
+
+    animation:
+        cakeFloat 2s infinite;
+}
+
+@keyframes cakeFloat {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+}
+
+.final-name {
+
+    font-size: 32px;
+
+    color: #ffd166;
+
+    margin-top: -10px;
+
+    margin-bottom: 18px;
+}
+
+.final-message {
+
+    max-width: 380px;
+
+    color: #e4dbe9;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    padding:
+        16px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3cac,
+            #784ba0
+        );
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,60,172,.4);
+
+    cursor: pointer;
+}
+
+button:active {
+
+    transform:
+        scale(.94);
+}
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+#fireworks {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    display: none;
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-height: 650px) {
+
+    .gift {
+        font-size: 60px;
+    }
+
+    .photo-card {
+        height: 300px;
+    }
+
+    .final-message {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+}
